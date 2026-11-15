@@ -1,0 +1,19 @@
+Tahun <- 2010:2020
+Gula <- c(50, 70, 100, 120, 110, 100, 120, 135, 140, 150, 145)
+Minyak <- c(80, 85, 90, 100, 120, 125, 135, 140, 150, 190, 195)
+Sabun <- c(55, 70, 80, 95, 80, 100, 105, 110, 120, 100, 130)
+
+datatoko <- data.frame(Tahun, Gula, Minyak, Sabun)
+
+print(summary(datatoko))
+print(datatoko)
+
+plot(datatoko$Tahun, datatoko$Gula, type = "b", col = "green", pch = 15,
+     ylim = c(40, 200), xlab = "Tahun", ylab = "Jumlah Penjualan",
+     main = "Grafik Gabungan Penjualan Toko Dewi Sri (2010-2020)")
+
+lines(datatoko$Tahun, datatoko$Minyak, type = "b", col = "gold", pch = 16)
+lines(datatoko$Tahun, datatoko$Sabun, type = "b", col = "blue", pch = 17)
+
+legend("topleft", legend = c("Gula", "Minyak", "Sabun"),
+       col = c("green", "gold", "blue"), pch = c(15, 16, 17), lty = 1)
